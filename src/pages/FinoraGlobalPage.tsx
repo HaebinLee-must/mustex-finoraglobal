@@ -135,10 +135,7 @@ const FinoraGlobalPage = () => {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <button className="px-8 py-4 rounded-full bg-primary hover:bg-primary/90 text-white font-bold transition-all flex items-center gap-2 group">
-                                Our Vision <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </button>
-                            <button className="px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 font-semibold transition-all">
-                                Investor Relations
+                                Contact IR <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
                         </div>
                     </motion.div>
