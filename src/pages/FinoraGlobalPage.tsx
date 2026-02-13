@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { AuroraBeamBackgroundFinoraGlobal } from '../components/AuroraBeamBackgroundFinoraGlobal';
+import { AuroraBeamBackgroundFinoraGlobal } from '../features/landing/components/AuroraBeamBackgroundFinoraGlobal';
 import { ArrowRight, Globe, Shield, Zap, CheckCircle2, Building2, BarChart3, Lock } from 'lucide-react';
 
 const GlobalHeader = () => {
@@ -37,10 +37,10 @@ const GlobalHeader = () => {
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-primary to-blue-600 rounded-lg flex items-center justify-center">
                         <span className="text-white font-bold text-xl">F</span>
                     </div>
-                    <span className="text-xl font-bold tracking-tight text-white">FINORA <span className="text-cyan-400 font-medium">GLOBAL</span></span>
+                    <span className="text-xl font-bold tracking-tight text-white">FINORA <span className="text-primary font-medium">GLOBAL</span></span>
                 </div>
 
                 <nav className="hidden md:flex items-center gap-8">
@@ -49,7 +49,7 @@ const GlobalHeader = () => {
                             key={item.name}
                             href={item.href}
                             onClick={(e) => scrollToSection(e, item.href)}
-                            className="text-sm font-medium text-gray-300 hover:text-cyan-400 transition-colors"
+                            className="text-sm font-medium text-gray-300 hover:text-primary transition-colors"
                         >
                             {item.name}
                         </a>
@@ -119,12 +119,12 @@ const FinoraGlobalPage = () => {
                         transition={{ duration: 0.8 }}
                         className="max-w-4xl"
                     >
-                        <span className="inline-block px-4 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-semibold mb-6">
+                        <span className="inline-block px-4 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-semibold mb-6">
                             Financing the Future
                         </span>
                         <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.1] tracking-tight text-white">
                             Leading Financial Innovation, <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-600">
                                 Architecting the Future
                             </span> <br />
                             of Digital Assets.
@@ -134,7 +134,7 @@ const FinoraGlobalPage = () => {
                             Starting with the Philippines, we invest in and govern the infrastructure that bridges traditional finance with the future of value.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <button className="px-8 py-4 rounded-full bg-cyan-500 hover:bg-cyan-400 text-black font-bold transition-all flex items-center gap-2 group">
+                            <button className="px-8 py-4 rounded-full bg-primary hover:bg-primary/90 text-white font-bold transition-all flex items-center gap-2 group">
                                 Our Vision <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
                             <button className="px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 font-semibold transition-all">
@@ -146,7 +146,7 @@ const FinoraGlobalPage = () => {
 
                 <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-50">
                     <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-gray-400">Scroll to Explore</span>
-                    <div className="w-px h-12 bg-gradient-to-b from-cyan-500 to-transparent"></div>
+                    <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent"></div>
                 </div>
             </section>
 
@@ -161,7 +161,7 @@ const FinoraGlobalPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
                         {[
                             {
-                                icon: <Building2 className="w-8 h-8 text-cyan-400" />,
+                                icon: <Building2 className="w-8 h-8 text-primary" />,
                                 title: "Strategic Governance",
                                 desc: "We own and control the management direction of our subsidiaries to ensure long-term sustainability and growth."
                             },
@@ -182,7 +182,7 @@ const FinoraGlobalPage = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-cyan-500/30 transition-all group"
+                                className="p-8 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:border-primary/30 transition-all group"
                             >
                                 <div className="mb-6 p-3 rounded-xl bg-white/[0.03] w-fit group-hover:scale-110 transition-transform">
                                     {item.icon}
@@ -198,7 +198,7 @@ const FinoraGlobalPage = () => {
             {/* Global Network Section */}
             <section id="network" className="py-24 md:py-32 bg-black relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/20 blur-[120px] rounded-full"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 blur-[120px] rounded-full"></div>
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10">
@@ -209,15 +209,15 @@ const FinoraGlobalPage = () => {
                                 subtitle="Our global journey begins in the Philippines, a rapidly growing hub for fintech and digital innovation in Southeast Southeast Asia."
                             />
                             <div className="space-y-6">
-                                <div className="p-6 rounded-2xl bg-cyan-500/5 border border-cyan-500/10">
-                                    <h4 className="text-cyan-400 font-bold mb-2 flex items-center gap-2">
+                                <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
+                                    <h4 className="text-primary font-bold mb-2 flex items-center gap-2">
                                         <CheckCircle2 className="w-5 h-5" /> Subsidiary Spotlight: Finora Technology, Inc.
                                     </h4>
                                     <p className="text-gray-300">The operating entity responsible for executing the digital asset exchange and STO business within AFAB.</p>
                                 </div>
                                 <ul className="space-y-4">
                                     <li className="flex items-start gap-3">
-                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
+                                        <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary"></div>
                                         <p className="text-gray-400"><strong className="text-white">Governance:</strong> Finora Global holds a majority stake (60%) and exercises management control.</p>
                                     </li>
                                     <li className="flex items-start gap-3">
@@ -233,7 +233,7 @@ const FinoraGlobalPage = () => {
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="text-center">
                                         <div className="text-5xl font-bold text-white mb-2">60%</div>
-                                        <div className="text-cyan-400 font-medium tracking-widest uppercase text-xs">Majority Stake</div>
+                                        <div className="text-primary font-medium tracking-widest uppercase text-xs">Majority Stake</div>
                                     </div>
                                 </div>
                             </div>
@@ -258,13 +258,13 @@ const FinoraGlobalPage = () => {
                             viewport={{ once: true }}
                             className="relative group"
                         >
-                            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                            <div className="absolute -inset-1 bg-gradient-to-r from-primary to-blue-600 rounded-3xl blur opacity-10 group-hover:opacity-20 transition-opacity"></div>
                             <div className="relative p-10 rounded-3xl bg-black border border-white/5 h-full">
-                                <div className="text-cyan-500 font-bold text-sm mb-6 tracking-widest uppercase">01. Digital Asset Exchange</div>
+                                <div className="text-primary font-bold text-sm mb-6 tracking-widest uppercase">01. Digital Asset Exchange</div>
                                 <h3 className="text-2xl font-bold mb-8 text-white">ODAL Class 1 Licensed</h3>
                                 <div className="space-y-8">
                                     <div className="flex gap-4">
-                                        <div className="mt-1"><BarChart3 className="w-6 h-6 text-cyan-400" /></div>
+                                        <div className="mt-1"><BarChart3 className="w-6 h-6 text-primary" /></div>
                                         <div>
                                             <h4 className="font-bold text-white mb-1">Spot Trading</h4>
                                             <p className="text-gray-400 text-sm">Transparent marketplace with a focus on price discovery.</p>
@@ -331,7 +331,7 @@ const FinoraGlobalPage = () => {
                             { title: "Independent Oversight", desc: "Dedicated Risk Management Committee operating independently from business units." }
                         ].map((pillar, i) => (
                             <div key={i} className="text-center p-8 rounded-2xl bg-white/[0.02] border border-white/10">
-                                <div className="w-12 h-12 bg-cyan-500/10 rounded-full flex items-center justify-center mx-auto mb-6 text-cyan-400 font-bold">
+                                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary font-bold">
                                     0{i + 1}
                                 </div>
                                 <h3 className="text-xl font-bold mb-4 text-white">{pillar.title}</h3>
@@ -348,10 +348,10 @@ const FinoraGlobalPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                         <div className="lg:col-span-2">
                             <div className="flex items-center gap-2 mb-8">
-                                <div className="w-8 h-8 bg-cyan-500 rounded-md flex items-center justify-center">
+                                <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
                                     <span className="text-white font-bold">F</span>
                                 </div>
-                                <span className="text-xl font-bold tracking-tight text-white">FINORA <span className="text-cyan-400 font-medium">GLOBAL</span></span>
+                                <span className="text-xl font-bold tracking-tight text-white">FINORA <span className="text-primary font-medium">GLOBAL</span></span>
                             </div>
                             <p className="text-gray-500 text-sm max-w-md leading-relaxed">
                                 Finora Global, Inc. is the holding company and does not directly operate the exchange platform.
@@ -377,8 +377,8 @@ const FinoraGlobalPage = () => {
                                 <li>contact@finora.holdings</li>
                                 <li>ir@finora.holdings</li>
                                 <li className="pt-4 flex gap-4">
-                                    <a href="#" className="hover:text-cyan-400 transition-colors">Privacy Policy</a>
-                                    <a href="#" className="hover:text-cyan-400 transition-colors">Terms of Use</a>
+                                    <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+                                    <a href="#" className="hover:text-primary transition-colors">Terms of Use</a>
                                 </li>
                             </ul>
                         </div>
