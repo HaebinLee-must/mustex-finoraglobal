@@ -42,30 +42,31 @@ const COLOR_CONFIG = {
 
 const BEAMS_MASTER: Omit<AuroraBeam, 'id' | 'groupId'>[] = [
     // [후면부 포인트 광선들 - 레이어 뒤쪽]
-    { colorKey: 'WHITE', x: 0.25, y: 0.6, z: 0.3, width: 450, scaleY: 5, angle: 0.3, blur: 50, opacity: 0.2, showOn: ['desktop'] },
+    { colorKey: 'WHITE', x: 0.25, y: 0.6, z: 0.3, width: 450, scaleY: 5, angle: 0.3, blur: 50, opacity: 0.2, showOn: ['desktop', 'mobile'] },
+    { colorKey: 'CYAN', x: -0.1, y: 0.6, z: 0.4, width: 400, scaleY: 6, angle: -0.3, blur: 65, opacity: 0.3, showOn: ['mobile'] },
     { colorKey: 'PINK', x: 0.5, y: 0.6, z: 0.2, width: 350, scaleY: 5, angle: 0.3, blur: 50, opacity: 0.9, showOn: ['desktop', 'tablet'] },
     { colorKey: 'LIME', x: 0.15, y: 0.6, z: 0.4, width: 400, scaleY: 6, angle: -0.3, blur: 65, opacity: 0.3, showOn: ['desktop'] },
-    { colorKey: 'CYAN', x: 0.19, y: 0.6, z: 0.9, width: 350, scaleY: 5, angle: 0.3, blur: 60, opacity: 0.4, showOn: ['desktop', 'tablet'] },
+    { colorKey: 'CYAN', x: 0.19, y: 0.6, z: 0.9, width: 350, scaleY: 5, angle: 0.3, blur: 60, opacity: 0.4, showOn: ['desktop', 'tablet', 'mobile'] },
     { colorKey: 'PURPLE', x: 0.85, y: 0.6, z: 0.2, width: 500, scaleY: 10, angle: 0.4, blur: 60, opacity: 0.8, showOn: ['desktop', 'tablet'] },
     { colorKey: 'PINK', x: 0.65, y: 0.2, z: 0.4, width: 400, scaleY: 6, angle: -0.3, blur: 65, opacity: 0.4, showOn: ['desktop'] },
-    { colorKey: 'PURPLE', x: 0.95, y: 0.6, z: 0.2, width: 350, scaleY: 5, angle: -0.1, blur: 50, opacity: 0.4, showOn: ['desktop'] },
+    { colorKey: 'PURPLE', x: 0.95, y: 0.6, z: 0.2, width: 350, scaleY: 5, angle: -0.1, blur: 50, opacity: 0.4, showOn: ['desktop', 'mobile'] },
 
     // [전면부 메인 광선들 - 레이어 앞쪽]
-    { colorKey: 'MINT', x: 0.01, y: 0.6, z: 0.9, width: 600, scaleY: 8, angle: 0.3, blur: 40, opacity: 0.6, showOn: ['desktop', 'tablet', 'mobile'] },
-    { colorKey: 'CYAN', x: 0.05, y: 0.7, z: 0.7, width: 300, scaleY: 8, angle: -0.35, blur: 35, opacity: 0.9, showOn: ['desktop', 'tablet'] },
-    { colorKey: 'PINK', x: 0.08, y: 0.6, z: 1, width: 250, scaleY: 6, angle: -0.35, blur: 30, opacity: 0.8, showOn: ['desktop'] },
-    { colorKey: 'LIME', x: 0.16, y: 0.6, z: 0.8, width: 300, scaleY: 8, angle: -0.15, blur: 35, opacity: 0.5, showOn: ['desktop', 'tablet'] },
+    { colorKey: 'MINT', x: 0.01, y: 0.6, z: 0.9, width: 600, scaleY: 8, angle: 0.3, blur: 40, opacity: 0.6, showOn: ['desktop', 'tablet'] },
+    { colorKey: 'CYAN', x: 0.05, y: 0.7, z: 0.7, width: 300, scaleY: 8, angle: -0.35, blur: 35, opacity: 0.7, showOn: ['desktop', 'tablet', 'mobile'] },
+    { colorKey: 'PINK', x: 0.08, y: 0.6, z: 1, width: 250, scaleY: 6, angle: -0.35, blur: 30, opacity: 0.8, showOn: ['desktop', 'mobile'] },
+    { colorKey: 'LIME', x: 0.16, y: 0.6, z: 0.8, width: 300, scaleY: 8, angle: -0.15, blur: 35, opacity: 0.3, showOn: ['desktop', 'tablet', 'mobile'] },
     { colorKey: 'PINK', x: 0.19, y: 0.6, z: 0.3, width: 450, scaleY: 5, angle: 0.3, blur: 50, opacity: 0.4, showOn: ['desktop', 'tablet', 'mobile'] },
     { colorKey: 'CYAN', x: 0.32, y: 0.6, z: 0.7, width: 750, scaleY: 8, angle: 0, blur: 35, opacity: 0.6, showOn: ['desktop', 'tablet'] },
-    { colorKey: 'PURPLE', x: 0.35, y: 0.4, z: 0.4, width: 350, scaleY: 3, angle: -0.45, blur: 30, opacity: 0.8, showOn: ['desktop', 'tablet', 'mobile'] },
+    { colorKey: 'PURPLE', x: 0.35, y: 0.4, z: 0.4, width: 350, scaleY: 3, angle: -0.45, blur: 30, opacity: 0.6, showOn: ['desktop', 'tablet', 'mobile'] },
     { colorKey: 'CYAN', x: 0.50, y: 0.6, z: 0.9, width: 600, scaleY: 10, angle: 0.1, blur: 25, opacity: 0.6, showOn: ['desktop', 'tablet', 'mobile'] },
-    { colorKey: 'CYAN', x: 0.75, y: 0.6, z: 0.7, width: 500, scaleY: 8, angle: -0.1, blur: 30, opacity: 1, showOn: ['desktop', 'tablet', 'mobile'] },
+    { colorKey: 'CYAN', x: 0.75, y: 0.6, z: 0.7, width: 500, scaleY: 8, angle: -0.1, blur: 30, opacity: 1, showOn: ['desktop', 'tablet'] },
     { colorKey: 'PINK', x: 0.850, y: 0.2, z: 0.5, width: 750, scaleY: 8, angle: 0.1, blur: 60, opacity: 0.6, showOn: ['desktop', 'tablet'] },
-    { colorKey: 'CYAN', x: 0.60, y: 0.1, z: 0.7, width: 450, scaleY: 4, angle: 0.15, blur: 20, opacity: 0.6, showOn: ['desktop'] },
+    { colorKey: 'CYAN', x: 0.60, y: 0.1, z: 0.7, width: 450, scaleY: 4, angle: 0.15, blur: 20, opacity: 0.6, showOn: ['desktop', 'mobile'] },
     { colorKey: 'LIME', x: 0.60, y: 0.6, z: 0.8, width: 300, scaleY: 6, angle: 0.05, blur: 30, opacity: 0.3, showOn: ['desktop', 'tablet'] },
     { colorKey: 'PURPLE', x: 0.97, y: 0.6, z: 0.9, width: 600, scaleY: 8, angle: 0.3, blur: 30, opacity: 0.6, showOn: ['desktop', 'tablet', 'mobile'] },
     { colorKey: 'MINT', x: 0.75, y: 0.6, z: 0.4, width: 300, scaleY: 8, angle: -0.35, blur: 20, opacity: 0.2, showOn: ['desktop'] },
-    { colorKey: 'LIME', x: 0.70, y: 0.6, z: 0.8, width: 300, scaleY: 8, angle: -0.15, blur: 30, opacity: 0.2, showOn: ['desktop'] },
+    { colorKey: 'LIME', x: 0.70, y: 0.6, z: 0.8, width: 300, scaleY: 8, angle: -0.15, blur: 30, opacity: 0.2, showOn: ['desktop', 'mobile'] },
 ];
 
 const hsbToRgb = (h: number, s: number, b: number): RGB => {

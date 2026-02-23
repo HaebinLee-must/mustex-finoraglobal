@@ -62,7 +62,7 @@ const GlobalHeader = ({ lang, setLang, t }: { lang: 'en' | 'ko', setLang: (l: 'e
                         onClick={() => setLang(lang === 'en' ? 'ko' : 'en')}
                         className="flex items-center justify-center gap-2 px-5 py-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-medium transition-all text-gray-300 min-w-[80px]"
                     >
-                        <Languages className="w-4 h-4" />
+                        <Globe className="w-4 h-4" />
                         {lang === 'en' ? 'KO' : 'EN'}
                     </button>
                     <button className="hidden sm:block px-6 py-2 rounded-full bg-primary hover:bg-primary/90 text-white text-sm font-bold transition-all shadow-lg shadow-primary/20">
@@ -131,7 +131,7 @@ const translations = {
         business: {
             title: 'A Regulated Digital Asset Ecosystem',
             subtitle: 'We invest in and operate businesses authorized under the Authority of the Freeport Area of Bataan (AFAB) ODAL Framework, ensuring a fully regulated environment.',
-            area1: { tag: '01. Digital Asset Exchange', title: 'ODAL Class 1 Licensed', feature1: 'Spot Trading', feature1_desc: 'Transparent marketplace with a focus on price discovery.', feature2: 'Institutional Custody', feature2_desc: 'Segregated management using cold storage and multi-sig.' },
+            area1: { tag: '01. Digital Asset Exchange', title: 'ODAL Class 1 Pre-Licensed', feature1: 'Spot Trading', feature1_desc: 'Transparent marketplace with a focus on price discovery.', feature2: 'Institutional Custody', feature2_desc: 'Segregated management using cold storage and multi-sig.' },
             area2: { tag: '02. Tokenization & STO', title: 'ODAL Class 2 Licensed', feature1: 'RWA Tokenization', feature1_desc: 'Digitizing Real World Assets (Real Estate, Infrastructure, IP).', feature2: 'Issuance Lifecycle', feature2_desc: 'End-to-end management from issuance to administration.' }
         },
         governance: {
@@ -193,7 +193,7 @@ const translations = {
         business: {
             title: '규제 중심의 디지털 자산 생태계',
             subtitle: '필리핀 AFAB의 ODAL 프레임워크에 따라 인가된 비즈니스에 투자하고 운영하며, 투명한 규제 환경을 보장합니다.',
-            area1: { tag: '01. 디지털 자산 거래소', title: 'ODAL Class 1 라이선스 보유', feature1: '현물 거래(Spot Trading)', feature1_desc: '가격 발견 기능에 집중한 투명한 시장을 제공합니다.', feature2: '기관급 커스터디', feature2_desc: '콜드 스토리지와 멀티시그를 활용한 자산 분리 관리를 시행합니다.' },
+            area1: { tag: '01. 디지털 자산 거래소', title: 'ODAL Class 1 사전 인허가 확보', feature1: '현물 거래(Spot Trading)', feature1_desc: '가격 발견 기능에 집중한 투명한 시장을 제공합니다.', feature2: '기관급 커스터디', feature2_desc: '콜드 스토리지와 멀티시그를 활용한 자산 분리 관리를 시행합니다.' },
             area2: { tag: '02. 토큰화 및 STO', title: 'ODAL Class 2 라이선스 보유', feature1: 'RWA 토큰화', feature1_desc: '부동산, 인프라, IP 등 실물 자산(Real World Assets)의 디지털화를 추진합니다.', feature2: '발행 라이프사이클', feature2_desc: '자산 토큰의 발행부터 관리까지 엔드 투 엔드 프로세스를 운영합니다.' }
         },
         governance: {
@@ -242,7 +242,7 @@ const FinoraGlobalPage = () => {
                 <AuroraBeamBackgroundFinoraGlobal className="absolute inset-0 z-0 scale-110" />
 
                 {/* Visual Layer: Glassmorphism Overlay */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(11,14,17,0)_0%,rgba(11,14,17,0.5)_100%)] z-[1]"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(11,14,17,0)_0%,rgba(11,14,17,0)_100%)] z-[1]"></div>
 
                 <div className="container mx-auto px-6 relative z-10 pt-20">
                     <div className="max-w-5xl">
