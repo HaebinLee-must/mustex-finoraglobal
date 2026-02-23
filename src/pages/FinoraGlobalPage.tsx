@@ -107,8 +107,8 @@ const translations = {
             title2: 'Architecting the Future',
             title3: 'of Digital Assets.',
             desc: 'Finora Global is the strategic headquarters for a regulated global digital asset ecosystem. Starting with the Philippines, we invest in and govern the infrastructure that bridges traditional finance with the future of value.',
-            cta1: 'Our Vision',
-            cta2: 'Investor Relations',
+            cta1: 'Contact Us',
+            cta2: 'Our Vision',
             scroll: 'Scroll to Explore'
         },
         network: {
@@ -169,8 +169,8 @@ const translations = {
             title2: '디지털 자산의 미래를',
             title3: '설계합니다.',
             desc: 'FINORA GLOBAL은 규제 기반의 글로벌 디지털 자산 생태계를 위한 전략적 본부입니다. 필리핀을 시작으로, 전통 금융과 미래 가치를 잇는 인프라에 투자하고 이를 관리합니다.',
-            cta1: '우리의 비전',
-            cta2: 'IR 정보',
+            cta1: '문의하기',
+            cta2: '우리의 비전',
             scroll: '더 알아보기'
         },
         network: {
@@ -305,8 +305,18 @@ const FinoraGlobalPage = () => {
                                 <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
                                 {t.hero.cta1} <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                             </button>
-                            <button className="px-10 py-5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 font-bold transition-all backdrop-blur-md text-white shadow-lg">
+                            <button
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    const element = document.querySelector('#network');
+                                    if (element) {
+                                        element.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                                className="px-10 py-5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 font-bold transition-all backdrop-blur-md text-white shadow-lg flex items-center gap-2 group"
+                            >
                                 {t.hero.cta2}
+                                <ArrowRight className="w-4 h-4 rotate-90 group-hover:translate-y-1 transition-transform" />
                             </button>
                         </motion.div>
                     </div>
