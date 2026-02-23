@@ -301,9 +301,9 @@ const FinoraGlobalPage = () => {
                             transition={{ duration: 0.8, delay: 1.2 }}
                             className="flex flex-wrap gap-5"
                         >
-                            <button className="relative overflow-hidden px-10 py-5 rounded-full bg-primary text-white font-bold transition-all flex items-center gap-3 group shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]">
+                            <button className="relative overflow-hidden px-10 py-5 rounded-full bg-primary text-white font-bold transition-all flex items-center group shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)]">
                                 <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
-                                {t.hero.cta1} <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                                {t.hero.cta1}
                             </button>
                             <button
                                 onClick={(e) => {
