@@ -18,6 +18,7 @@ interface AuroraBeam {
     angle: number;
     blur: number;
     opacity: number;
+    showOn: ('mobile' | 'tablet' | 'desktop')[];
 }
 
 interface Star {
@@ -41,31 +42,30 @@ const COLOR_CONFIG = {
 
 const BEAMS_MASTER: Omit<AuroraBeam, 'id' | 'groupId'>[] = [
     // [후면부 포인트 광선들 - 레이어 뒤쪽]
-    { colorKey: 'WHITE', x: 0.25, y: 0.6, z: 0.3, width: 450, scaleY: 5, angle: 0.3, blur: 50, opacity: 0.2 },
-    { colorKey: 'PINK', x: 0.5, y: 0.6, z: 0.2, width: 350, scaleY: 5, angle: 0.3, blur: 50, opacity: 0.9 },
-    { colorKey: 'LIME', x: 0.15, y: 0.6, z: 0.4, width: 400, scaleY: 6, angle: -0.3, blur: 65, opacity: 0.3 },
-    { colorKey: 'CYAN', x: 0.19, y: 0.6, z: 0.9, width: 350, scaleY: 5, angle: 0.3, blur: 60, opacity: 0.4 },
-    { colorKey: 'PURPLE', x: 0.85, y: 0.6, z: 0.2, width: 500, scaleY: 10, angle: 0.4, blur: 60, opacity: 0.8 },
-    { colorKey: 'PINK', x: 0.65, y: 0.2, z: 0.4, width: 400, scaleY: 6, angle: -0.3, blur: 65, opacity: 0.4 },
-    { colorKey: 'PURPLE', x: 0.95, y: 0.6, z: 0.2, width: 350, scaleY: 5, angle: -0.1, blur: 50, opacity: 0.4 },
-
+    { colorKey: 'WHITE', x: 0.25, y: 0.6, z: 0.3, width: 450, scaleY: 5, angle: 0.3, blur: 50, opacity: 0.2, showOn: ['desktop'] },
+    { colorKey: 'PINK', x: 0.5, y: 0.6, z: 0.2, width: 350, scaleY: 5, angle: 0.3, blur: 50, opacity: 0.9, showOn: ['desktop', 'tablet'] },
+    { colorKey: 'LIME', x: 0.15, y: 0.6, z: 0.4, width: 400, scaleY: 6, angle: -0.3, blur: 65, opacity: 0.3, showOn: ['desktop'] },
+    { colorKey: 'CYAN', x: 0.19, y: 0.6, z: 0.9, width: 350, scaleY: 5, angle: 0.3, blur: 60, opacity: 0.4, showOn: ['desktop', 'tablet'] },
+    { colorKey: 'PURPLE', x: 0.85, y: 0.6, z: 0.2, width: 500, scaleY: 10, angle: 0.4, blur: 60, opacity: 0.8, showOn: ['desktop', 'tablet'] },
+    { colorKey: 'PINK', x: 0.65, y: 0.2, z: 0.4, width: 400, scaleY: 6, angle: -0.3, blur: 65, opacity: 0.4, showOn: ['desktop'] },
+    { colorKey: 'PURPLE', x: 0.95, y: 0.6, z: 0.2, width: 350, scaleY: 5, angle: -0.1, blur: 50, opacity: 0.4, showOn: ['desktop'] },
 
     // [전면부 메인 광선들 - 레이어 앞쪽]
-    { colorKey: 'MINT', x: 0.01, y: 0.6, z: 0.9, width: 600, scaleY: 8, angle: 0.3, blur: 40, opacity: 0.6 },
-    { colorKey: 'CYAN', x: 0.05, y: 0.7, z: 0.7, width: 300, scaleY: 8, angle: -0.35, blur: 35, opacity: 0.9 },
-    { colorKey: 'PINK', x: 0.08, y: 0.6, z: 1, width: 250, scaleY: 6, angle: -0.35, blur: 30, opacity: 0.8 },
-    { colorKey: 'LIME', x: 0.16, y: 0.6, z: 0.8, width: 300, scaleY: 8, angle: -0.15, blur: 35, opacity: 0.5 },
-    { colorKey: 'PINK', x: 0.19, y: 0.6, z: 0.3, width: 450, scaleY: 5, angle: 0.3, blur: 50, opacity: 0.4 },
-    { colorKey: 'CYAN', x: 0.32, y: 0.6, z: 0.7, width: 750, scaleY: 8, angle: 0, blur: 35, opacity: 0.6 },
-    { colorKey: 'PURPLE', x: 0.35, y: 0.4, z: 0.4, width: 350, scaleY: 3, angle: -0.45, blur: 30, opacity: 0.8 },
-    { colorKey: 'CYAN', x: 0.50, y: 0.6, z: 0.9, width: 600, scaleY: 10, angle: 0.1, blur: 25, opacity: 0.6 },
-    { colorKey: 'CYAN', x: 0.75, y: 0.6, z: 0.7, width: 500, scaleY: 8, angle: -0.1, blur: 30, opacity: 1 },
-    { colorKey: 'PINK', x: 0.850, y: 0.2, z: 0.5, width: 750, scaleY: 8, angle: 0.1, blur: 60, opacity: 0.6 },
-    { colorKey: 'CYAN', x: 0.60, y: 0.1, z: 0.7, width: 450, scaleY: 4, angle: 0.15, blur: 20, opacity: 0.6 },
-    { colorKey: 'LIME', x: 0.60, y: 0.6, z: 0.8, width: 300, scaleY: 6, angle: 0.05, blur: 30, opacity: 0.3 },
-    { colorKey: 'PURPLE', x: 0.97, y: 0.6, z: 0.9, width: 600, scaleY: 8, angle: 0.3, blur: 30, opacity: 0.6 },
-    { colorKey: 'MINT', x: 0.75, y: 0.6, z: 0.4, width: 300, scaleY: 8, angle: -0.35, blur: 20, opacity: 0.2 },
-    { colorKey: 'LIME', x: 0.70, y: 0.6, z: 0.8, width: 300, scaleY: 8, angle: -0.15, blur: 30, opacity: 0.2 },
+    { colorKey: 'MINT', x: 0.01, y: 0.6, z: 0.9, width: 600, scaleY: 8, angle: 0.3, blur: 40, opacity: 0.6, showOn: ['desktop', 'tablet', 'mobile'] },
+    { colorKey: 'CYAN', x: 0.05, y: 0.7, z: 0.7, width: 300, scaleY: 8, angle: -0.35, blur: 35, opacity: 0.9, showOn: ['desktop', 'tablet'] },
+    { colorKey: 'PINK', x: 0.08, y: 0.6, z: 1, width: 250, scaleY: 6, angle: -0.35, blur: 30, opacity: 0.8, showOn: ['desktop'] },
+    { colorKey: 'LIME', x: 0.16, y: 0.6, z: 0.8, width: 300, scaleY: 8, angle: -0.15, blur: 35, opacity: 0.5, showOn: ['desktop', 'tablet'] },
+    { colorKey: 'PINK', x: 0.19, y: 0.6, z: 0.3, width: 450, scaleY: 5, angle: 0.3, blur: 50, opacity: 0.4, showOn: ['desktop', 'tablet', 'mobile'] },
+    { colorKey: 'CYAN', x: 0.32, y: 0.6, z: 0.7, width: 750, scaleY: 8, angle: 0, blur: 35, opacity: 0.6, showOn: ['desktop', 'tablet'] },
+    { colorKey: 'PURPLE', x: 0.35, y: 0.4, z: 0.4, width: 350, scaleY: 3, angle: -0.45, blur: 30, opacity: 0.8, showOn: ['desktop', 'tablet', 'mobile'] },
+    { colorKey: 'CYAN', x: 0.50, y: 0.6, z: 0.9, width: 600, scaleY: 10, angle: 0.1, blur: 25, opacity: 0.6, showOn: ['desktop', 'tablet', 'mobile'] },
+    { colorKey: 'CYAN', x: 0.75, y: 0.6, z: 0.7, width: 500, scaleY: 8, angle: -0.1, blur: 30, opacity: 1, showOn: ['desktop', 'tablet', 'mobile'] },
+    { colorKey: 'PINK', x: 0.850, y: 0.2, z: 0.5, width: 750, scaleY: 8, angle: 0.1, blur: 60, opacity: 0.6, showOn: ['desktop', 'tablet'] },
+    { colorKey: 'CYAN', x: 0.60, y: 0.1, z: 0.7, width: 450, scaleY: 4, angle: 0.15, blur: 20, opacity: 0.6, showOn: ['desktop'] },
+    { colorKey: 'LIME', x: 0.60, y: 0.6, z: 0.8, width: 300, scaleY: 6, angle: 0.05, blur: 30, opacity: 0.3, showOn: ['desktop', 'tablet'] },
+    { colorKey: 'PURPLE', x: 0.97, y: 0.6, z: 0.9, width: 600, scaleY: 8, angle: 0.3, blur: 30, opacity: 0.6, showOn: ['desktop', 'tablet', 'mobile'] },
+    { colorKey: 'MINT', x: 0.75, y: 0.6, z: 0.4, width: 300, scaleY: 8, angle: -0.35, blur: 20, opacity: 0.2, showOn: ['desktop'] },
+    { colorKey: 'LIME', x: 0.70, y: 0.6, z: 0.8, width: 300, scaleY: 8, angle: -0.15, blur: 30, opacity: 0.2, showOn: ['desktop'] },
 ];
 
 const hsbToRgb = (h: number, s: number, b: number): RGB => {
@@ -122,15 +122,17 @@ export const AuroraBeamBackgroundFinoraGlobal: React.FC<{ className?: string }> 
             const settings = DEVICE_SETTINGS[device as keyof typeof DEVICE_SETTINGS] || DEVICE_SETTINGS.desktop;
             canvas.style.filter = `contrast(${settings.contrast}) brightness(${settings.brightness})`;
 
-            const initializedBeams = BEAMS_MASTER.map((m, i) => {
-                const groupId = Math.min(3, Math.floor(Math.max(0, m.x) * 4));
-                return {
-                    ...m,
-                    id: i,
-                    groupId: groupId
-                } as AuroraBeam;
-            });
-            beamsRef.current = initializedBeams;
+            const filteredBeams = BEAMS_MASTER
+                .filter(m => m.showOn.includes(device as any))
+                .map((m, i) => {
+                    const groupId = Math.min(3, Math.floor(Math.max(0, m.x) * 4));
+                    return {
+                        ...m,
+                        id: i,
+                        groupId: groupId
+                    } as AuroraBeam;
+                });
+            beamsRef.current = filteredBeams;
 
             if (starsRef.current.length === 0) {
                 const newStars: Star[] = [];
@@ -147,7 +149,7 @@ export const AuroraBeamBackgroundFinoraGlobal: React.FC<{ className?: string }> 
                     });
                 }
 
-                const mainBeams = initializedBeams.filter(b => b.z > 0.6 || b.opacity > 0.7);
+                const mainBeams = filteredBeams.filter((b: AuroraBeam) => b.z > 0.6 || b.opacity > 0.7);
                 for (let i = 0; i < STAR_CONFIG.focusedCount; i++) {
                     const targetBeam = mainBeams[Math.floor(Math.random() * mainBeams.length)];
                     const offsetX = (Math.random() - 0.5) * 0.15;
