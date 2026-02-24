@@ -251,7 +251,7 @@ const FinoraGlobalPage = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.5 }}
                         >
-                            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-primary text-xs font-bold mb-8 tracking-wider uppercase">
+                            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-primary text-xs font-bold mb-8 tracking-wider uppercase">
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -322,6 +322,21 @@ const FinoraGlobalPage = () => {
                     </div>
                 </div>
 
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 2, duration: 1 }}
+                    className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-3"
+                >
+                    <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-500">{t.hero.scroll}</span>
+                    <div className="w-6 h-10 rounded-full border-2 border-gray-700 p-1 relative">
+                        <motion.div
+                            animate={{ y: [0, 12, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                            className="w-1.5 h-1.5 bg-primary rounded-full mx-auto"
+                        />
+                    </div>
+                </motion.div>
             </section>
 
             {/* Global Network Section (Reordered to 2nd) */}
